@@ -4,21 +4,25 @@ Structure sample django for microservice
 This sample include middleware to overwrite format response for service.
 API return format:
 
+```
 {
     transaction_id: uuid // transaction of request,
     status_code: 200 // for success,
     message: "SUCCESS",
     data: object // data response
 }
+```
 
 when API error. The exception will alias to ErrorMassage before response
 
+```
 {
     error_message: "SAMPLE-00000500" // look at ErrorMassage.py. Prefix SAMPLE is name service
     statusCode: 500 // look at ErrorMassage.py
     error_code: "SOMETHING_ERROR" // the code which you handle in your code
     message: "Detail error"
 }
+```
 
 If you want to use right to allow access to API. Use @Authority.requires_rights() 
 
